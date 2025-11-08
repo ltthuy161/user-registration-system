@@ -1,0 +1,9 @@
+# Railway configuration for frontend
+[build]
+  command = "npm install && npm run build"
+
+[deploy]
+  command = "npm run start:prod"
+
+[env]
+  NODE_ENV = "production"
