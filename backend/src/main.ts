@@ -9,7 +9,7 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:3000', // React development server
-      'https://your-app-name.netlify.app', // Replace with your Netlify domain
+      'https://user-registration-system-rz3g.onrender.com/', // Replace with your Netlify domain
       // Add your custom domain if you have one
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
