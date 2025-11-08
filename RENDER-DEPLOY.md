@@ -36,8 +36,8 @@ git push -u origin main
 3. Cấu hình:
    - **Name**: `user-registration-backend`
    - **Runtime**: `Node`
-   - **Build Command**: `cd backend && npm install && npm run build`
-   - **Start Command**: `cd backend && npm run start:prod`
+   - **Build Command**: `cd backend && npm install`
+   - **Start Command**: `cd backend && npm run build && npm run start:prod`
    - **Plan**: `Free`
 
 #### 2.3 Environment Variables cho Backend
@@ -181,7 +181,19 @@ PGPASSWORD=xxxxx_long_password_xxxxx
 
 ## 💡 TIPS VÀ TRICKS
 
-### 1. Auto-sleep và wake-up
+### 1. Fix lỗi "nest: not found"
+Nếu gặp lỗi này trong build:
+```bash
+sh: 1: nest: not found
+```
+
+**Giải pháp:**
+- Đảm bảo `@nestjs/cli` và `typescript` có trong `dependencies` (không phải `devDependencies`)
+- Sử dụng `npx nest build` thay vì `nest build`
+- Build command: `cd backend && npm install`
+- Start command: `cd backend && npm run build && npm run start:prod`
+
+### 2. Auto-sleep và wake-up
 - Free tier services sleep sau 15 phút không activity
 - First request sau khi sleep có thể mất 30-60s để wake up
 - Solution: Dùng cron job để ping service định kỳ
